@@ -1,0 +1,177 @@
+/* Start Custom code here  */
+
+:root {
+    /* color  */
+    --primary-color: #F4D04E;
+    --secondary-color: #6B6B6B;
+
+    --dark-color: #111111;
+    --light-color: #FFFFFF;
+
+    /* text  */
+    --font-family: "Figtree", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-weight-md: 500;
+    --font-weight-xb: 800;
+    /* see next point */
+
+    --line-height: 1.5;
+
+    /* space  */
+    --space-lg: 24px;
+    --space-md: 12px;
+    --space-sm: 8px;
+    --space-xs: 4px;
+
+    --border-radius-md: 20px;
+    --border-radius-sm: 10px;
+    --border-radius-xs: 4px;
+
+    --fs-1: clamp(20px, 4vw, 24px);
+    /* Title / Heading */
+    --fs-2: 16px;
+    /* Subtitle */
+    --fs-3: clamp(12px, 2vw, 14px);
+    /* Body text */
+    --fs-4: 12px;
+
+    --transition-timing: .5s;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('../assets/fonts/Figtree-ExtraBold.woff2') format('woff2'),
+        url('../assets/fonts/Figtree-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('../assets/fonts/Figtree-Medium.woff2') format('woff2'),
+        url('../assets/fonts/Figtree-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+section {
+    background-color: var(--primary-color);
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+}
+
+
+.blog-card {
+    background-color: var(--light-color);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-md);
+    font-family: var(--font-family);
+    border: 1px solid var(--dark-color);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    transition: top var(--transition-timing), left var(--transition-timing), box-shadow var(--transition-timing);
+    position: relative;
+    top: 0;
+    left: 0;
+    box-shadow: 8px 8px 0 0 #000;
+    max-width: 384px;
+}
+
+.blog-card:hover {
+    top: 8px;
+    left: 8px;
+    box-shadow: 0 0 0 0 #000;
+}
+
+.blog-card__img {
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    line-height: 0;
+}
+
+.blog-card__img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    transform: scale(1);
+    transition: transform var(--transition-timing);
+}
+
+.blog-card__img img:hover {
+    transform: scale(1.1);
+}
+
+.blog-card__content {
+    display: flex;
+    gap: var(--space-md);
+    flex-direction: column;
+}
+
+.blog-card__categories {
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--space-xs);
+}
+
+.blog-card__category {
+    background-color: var(--primary-color);
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--fs-3);
+    font-weight: var(--font-weight-xb);
+    border-radius: var(--border-radius-xs);
+    color: var(--dark-color);
+    text-decoration: none;
+    line-height: var(--line-height);
+    transition: background-color var(--transition-timing), color var(--transition-timing);
+}
+
+.blog-card__category:hover {
+    background-color: var(--dark-color);
+    color: var(--primary-color);
+}
+
+.blog-card__datetime {
+    display: block;
+    font-size: var(--fs-3);
+    line-height: var(--line-height);
+}
+
+.blog-card__title a {
+    font-size: var(--fs-1);
+    text-decoration: none;
+    font-weight: var(--font-weight-xb);
+    color: var(--dark-color);
+    transition: color var(--transition-timing);
+}
+
+.blog-card__title a:hover {
+    color: var(--primary-color);
+}
+
+.blog-card__text {
+    color: var(--secondary-color);
+    line-height: var(--line-height);
+    font-size: var(--fs-2);
+}
+
+.blog-card__author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.blog-card__author img {
+    width: var(--card-author-img-size);
+    height: var(--card-author-img-size);
+}
+
+.blog-card__author-name {
+    font-weight: var(--font-weight-xb);
+}
